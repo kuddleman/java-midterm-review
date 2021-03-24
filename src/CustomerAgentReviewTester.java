@@ -6,6 +6,10 @@ public class CustomerAgentReviewTester {
         FeedbackReport report4 = new FeedbackReport(1, "best agent ever!");
         FeedbackReport report5 = new FeedbackReport(1, "kinda sorta");
 
+        System.out.println(report1);
+
+
+
 
 
 

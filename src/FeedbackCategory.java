@@ -1,11 +1,13 @@
 public enum FeedbackCategory {
-    POSITIVE(7, 10), NEUTRAL(4, 6), NEGATIVE(0,3);
+    POSITIVE(7, 10, "Positive"), NEUTRAL(4, 6, "Neutral"), NEGATIVE(0,3, "Negative");
 
     private int min, max;
+    private String description;
 
-    private FeedbackCategory(int min, int max) {
+    private FeedbackCategory(int min, int max, String description) {
         this.min = min;
         this.max = max;
+        this.description = description;
     }
     public static FeedbackCategory getCategory(int score) {
         FeedbackCategory[] categoryArray = FeedbackCategory.values();
@@ -15,5 +17,9 @@ public enum FeedbackCategory {
             }
         }
         throw new IllegalArgumentException("Invalid score");
+    }
+    // this will make the description in small letters appear.
+    public String toString() {
+        return description;
     }
 }
