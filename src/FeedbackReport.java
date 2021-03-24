@@ -23,4 +23,16 @@ public class FeedbackReport {
     public String getFeedbackText() {
         return feedbackText;
     }
+
+    public FeedbackCategory getCategory() {
+        return category;
+    }
+
+    // omitting all setters
+
+    public String toString() {
+        return "ID:" + id + "\t" + category.toString() +
+                " \tScore: " + score + "\n\t" + feedbackText;
+
+    }
 }
