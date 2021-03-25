@@ -1,10 +1,13 @@
 public enum FeedbackCategory {
-    POSITIVE(7, 10, "Positive"), NEUTRAL(4, 6, "Neutral"), NEGATIVE(0,3, "Negative");
+    POSITIVE(7, 10, "Positive", true, false),
+    NEUTRAL(4, 6, "Neutral", false, false),
+    NEGATIVE(0,3, "Negative", false, true);
 
     private int min, max;
     private String description;
+    private boolean good, bad;
 
-    private FeedbackCategory(int min, int max, String description) {
+    private FeedbackCategory(int min, int max, String description, boolean good, boolean bad) {
         this.min = min;
         this.max = max;
         this.description = description;
@@ -21,5 +24,11 @@ public enum FeedbackCategory {
     // this will make the description in small letters appear.
     public String toString() {
         return description;
+    }
+    public boolean isGood() {
+        return good;
+    }
+    public boolean isBad() {
+        return bad;
     }
 }

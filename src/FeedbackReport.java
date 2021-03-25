@@ -35,4 +35,7 @@ public class FeedbackReport {
                 " \tScore: " + score + "\n\t" + feedbackText;
 
     }
+    public boolean isGood() {
+        return category.isGood();
+    }
 }

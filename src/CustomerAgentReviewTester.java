@@ -8,6 +8,16 @@ public class CustomerAgentReviewTester {
 
         System.out.println(report1);
 
+        CustomerAgent badBetty = new CustomerAgent("Betty");
+        badBetty.addFeedbackReport(report1);
+        badBetty.addFeedbackReport(report3);
+        System.out.println(badBetty);
+
+        CustomerAgent goodGeorge = new CustomerAgent("George");
+        goodGeorge.addFeedbackReport(report3);
+        goodGeorge.addFeedbackReport(report4);
+        System.out.println(goodGeorge);
+
 
 
 
