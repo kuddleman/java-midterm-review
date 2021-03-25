@@ -4,27 +4,26 @@ public abstract class Student implements Comparable<Student> {
     private String name;
     private Major major;
     private int id;
-    //private Graduator graduator;
+    private Graduator graduator;
     private boolean graduated;
 
     public static final boolean DEFAULT_GRADUATED = false;
     //public static final MajorNameComparator MAJOR_NAME_COMPARATOR = new MajorNameComparator();
     private static int totalStudents = 0;
 
-    // Graduator graduator,
-    public Student( String name, int id, Major major,  boolean graduated) {
+    //
+    public Student( String name, int id,  Major major, Graduator graduator, boolean graduated) {
         this.name = name;
         this.major = major;
         this.id = id;
-        //this.graduator = graduator;
+        this.graduator = graduator;
         this.graduated = graduated;
 
         Student.totalStudents ++;
     }
-    //, Graduator graduator
-    public Student(String name, int id, Major major) {
-        //graduator,
-        this(name, id, major,  DEFAULT_GRADUATED);
+
+    public Student(String name, int id, Major major, Graduator graduator) {
+        this(name, id, major, graduator, DEFAULT_GRADUATED);
     }
 
     public String getName() {
@@ -104,9 +103,9 @@ public abstract class Student implements Comparable<Student> {
         System.out.println(name + " is studying.");
     }
 
-//    public void graduationRequirements() {
-//        graduator.graduationRequirements();
-//    }
+    public void graduationRequirements() {
+        graduator.graduationRequirements();
+    }
 
     public abstract void tuition();
 

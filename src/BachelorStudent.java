@@ -2,17 +2,17 @@ public abstract class BachelorStudent extends Student {
 
     private double gpa;
 
-    //Graduator graduator,
-    public BachelorStudent(String name, int id, Major major,  boolean graduated, double gpa){
-        // Graduator graduator
-        super(name, id, major, graduated);
+
+    public BachelorStudent(String name, int id, Major major, Graduator graduator,  boolean graduated, double gpa){
+
+        super(name, id, major,  graduator,  graduated);
         this.gpa = gpa;
     }
 
-    //Graduator graduator,
-    public BachelorStudent(String name, int id, Major major, double gpa) {
-        // graduator
-        super(name, id, major);
+
+    public BachelorStudent(String name, int id, Major major, Graduator graduator, double gpa) {
+
+        super(name, id, major, graduator);
         this.gpa = gpa;
     }
 
